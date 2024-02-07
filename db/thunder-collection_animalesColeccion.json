@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "animalesColeccion",
+    "dateExported": "2024-02-07T23:19:16.665Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ad966152-a41e-4f95-a478-718075ec3424",
+            "colId": "7884bb6c-de2b-4631-811c-1aedfaad4003",
+            "containerId": "",
+            "name": "post animal",
+            "url": "http://localhost:3000/api/animales",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-06T23:09:40.513Z",
+            "modified": "2024-02-07T23:18:26.695Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tipo\": \"Perro\",\n  \"nombre\": \"Bartolo\",\n  \"edad\": \"5 años\",\n  \"cita\": \"12 de Febrero del 2024\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0f58d3b1-cbbf-4728-a9da-d185e5cb5362",
+            "colId": "7884bb6c-de2b-4631-811c-1aedfaad4003",
+            "containerId": "",
+            "name": "get animales",
+            "url": "http://localhost:3000/api/animales",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-07T21:57:05.736Z",
+            "modified": "2024-02-07T21:57:56.069Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cf179754-7c8e-4c0b-bf9e-dc22311fbf0c",
+            "colId": "7884bb6c-de2b-4631-811c-1aedfaad4003",
+            "containerId": "",
+            "name": "get animalById",
+            "url": "http://localhost:3000/api/animales/65c40a5f47a1e57b4e34fe8c",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-07T22:06:07.640Z",
+            "modified": "2024-02-07T23:10:09.536Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9161f3fa-bcaf-4f3d-b1c6-cc543782102d",
+            "colId": "7884bb6c-de2b-4631-811c-1aedfaad4003",
+            "containerId": "",
+            "name": "put animal",
+            "url": "http://localhost:3000/api/animales/65c40a5f47a1e57b4e34fe8c",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-02-07T22:28:54.625Z",
+            "modified": "2024-02-07T23:10:20.507Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tipo\": \"Gato\",\n  \"nombre\": \"Palma\",\n  \"edad\": \"6 años\",\n  \"cita\": \"12 de Febrero de 2024\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "de2e1632-765c-46f6-a18a-f7d228e878d4",
+            "colId": "7884bb6c-de2b-4631-811c-1aedfaad4003",
+            "containerId": "",
+            "name": "delete animal",
+            "url": "http://localhost:3000/api/animales/65c40a5f47a1e57b4e34fe8c",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-02-07T22:38:26.154Z",
+            "modified": "2024-02-07T23:10:36.927Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

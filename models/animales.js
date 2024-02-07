@@ -1,6 +1,6 @@
 const { Schema, model} = require('mongoose');
 
-const AnimalesSchema = Schema({
+const AnimalSchema = Schema({
     tipo:{
         type: String,
         require: [true, 'El tipo de animal es obligatorio']
@@ -10,8 +10,8 @@ const AnimalesSchema = Schema({
         require: [true, 'El nombre es obligatorio']
     },
     edad:{
-        type: Number,
-        require: [true, 'La edad es obligatorio']
+        type: String,
+        require: [true, 'La edad es obligatoria']
     },
     cita:{
         type: String,
@@ -19,7 +19,7 @@ const AnimalesSchema = Schema({
     },
     estado:{
         type: String,
-        require: true
+        default: true
     },
     google:{
         type: Boolean,
@@ -27,4 +27,4 @@ const AnimalesSchema = Schema({
     }
 });
 
-module.exports = model('Animales', AnimalesSchema);
+module.exports = model('Animales', AnimalSchema);

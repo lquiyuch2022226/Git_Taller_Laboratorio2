@@ -19,16 +19,16 @@ const usuariosGet = async (req, res = response) =>{
     })
 }
 
-const getUsuarioById = async (req, res) =>{
+const getUsuarioById = async (req, res) => {
     const {id} = req.params;
-    const usuario = await Usuario.findOne({_id: id})
+    const usuario = await Usuario.findOne({_id: id});
 
     res.status(200).json({
         usuario
     });
 }
 
-const putUsuarios = async (req, res, response)=>{
+const putUsuarios = async (req, res =  response)=>{
     const { id } = req.params;
     const { _id, password, google, correo, ...resto } = req.body;
 
@@ -38,7 +38,7 @@ const putUsuarios = async (req, res, response)=>{
     }
     
     const usuario = await Usuario.findByIdAndUpdate(id, resto);
-    response.status(200).json({
+    res.status(200).json({
         msg: 'Usuario Actualizado Exitosamente!!!',
         usuario
     });

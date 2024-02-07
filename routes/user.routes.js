@@ -16,16 +16,15 @@ const { existenteEmail,
 
 const router = Router();
 
+router.get("/", usuariosGet);
+
 router.get(
-    "/: id",
+    "/:id",
     [
         check('id', 'No es un id valido').isMongoId(),
         check('id').custom(existeId),
         validarCampos
-    ], getUsuarioById
-);
-
-router.get("/", usuariosGet);
+    ], getUsuarioById);
 
 router.put(
     "/:id",
@@ -34,8 +33,7 @@ router.put(
         check('id').custom(existeId),
         check("role").custom(esRoleValido),
         validarCampos
-    ], putUsuarios
-);
+    ], putUsuarios);
 
 router.post(
     "/",
