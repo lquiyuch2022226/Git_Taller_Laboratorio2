@@ -32,6 +32,12 @@ const getAnimalByID = async (req, res) => {
     const { id } = req.params;
     const animal = await Animal.findOne({_id: id});
 
+    if (!animal.estado) {
+        return res.status(400).json({
+             msg: "Este animal fue eliminado" 
+        });
+    }
+
     res.status(200).json({
         animal
     });
@@ -39,13 +45,22 @@ const getAnimalByID = async (req, res) => {
 
 const putAnimales = async (req, res = response) =>{
     const { id } = req.params;
-    const { _id, google, ...resto} = req.body;
+    const { _id, ...resto} = req.body;
+
+    const animal = await Animal.findOne({_id: id});
+
+    if (!animal.estado) {
+        return res.status(400).json({
+             msg: "Este animal fue eliminado" 
+        });
+    }
     
-    const animal = await Animal.findByIdAndUpdate(id, resto);
+    const animalActualizado = await Animal.findByIdAndUpdate(id, resto, { new: true });
+
 
     res.status(200).json({
-        msg: 'Animal actualizado Exitosamente!!',
-        animal
+        msg: 'Este animal fue ACTUALIZADO',
+        animalActualizado
     });
 }
 
@@ -54,7 +69,7 @@ const animalesDelete = async (req, res) => {
     const animal = await Animal.findByIdAndUpdate(id, {estado: false});
 
     res.status(200).json({
-        msg: 'Animal eliminado exitosamente!!!',
+        msg: 'Este animal fue ELIMINADO',
         animal
     });
 }

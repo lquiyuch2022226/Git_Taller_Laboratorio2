@@ -18,13 +18,9 @@ const AnimalSchema = Schema({
         require: [true, 'La cita es obligatorio']
     },
     estado:{
-        type: String,
+        type: Boolean,
         default: true
     },
-    google:{
-        type: Boolean,
-        default: false
-    }
 });
 
 module.exports = model('Animales', AnimalSchema);
